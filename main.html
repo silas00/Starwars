@@ -1,0 +1,112 @@
+<html lang="en">
+  <head>
+    
+	<base target="_top">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Star Wars</title>
+	
+	<link href='main.css' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+	
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	
+	
+  </head>
+  
+  <body>
+  
+	<div class="starwarsheader">
+			<img src="star.svg" alt="Star" class="starheader">
+			<img src="wars.svg" alt="Wars" class="warsheader">
+	</div>
+  
+  
+   
+			
+			<div class="container">
+			<div class="row"></div>  
+			</div>
+   
+   
+		
+		 
+  
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script type="text/javascript">
+		
+		
+		getSW();
+		
+		function geturl(url) {
+		   var nome = "";
+		   
+			$.getJSON(url, function (json) {
+				$.each(json.results, function(i, it) {
+				console.log(it.name);
+				nome=it.name;
+			})});
+			
+			return nome;
+		};
+		
+		function getnome(nome){
+		return nome.name;
+		
+		};
+		
+		function getSW() {
+		
+		var indice = 0;
+	   
+		$.getJSON("https://swapi.co/api/films/?format=json", function (json) {
+		$.each(json.results, function(i, it) {
+		
+		
+		  let text = '';
+		  text = text + '<div class="col-12 col-sm-6 col-md-4">';
+		  text = text + '<div id="' +indice+ '" class="item films">';
+		  indice+=1;
+		  text = text + '<h2 class="title">' + it.title.toLowerCase() + '</h2>';
+		  text = text + '<div class="crawls hidden"><div>';
+		  text = text + '<h2>' + it.title.toLowerCase() + '</h2>';
+		  text = text + '<p class=" ">' + it.opening_crawl + '</p>';
+				
+		  text = text + '</div></div>';
+		  text = text + '</div>';
+		  text = text + '</div>';
+		  $("div.row").append(text);
+		  
+		  let response = it.characters;
+		  console.log(response);
+		  
+		  
+		  $.each(response, function(ind, url) {
+		  
+		     var pessoa = "";
+			 fetch(url)
+				.then(response => response.json())
+				.then(nome => { 
+				pessoa = getnome(nome);
+				console.log(pessoa)});
+			 // atualizar div //
+			 
+			 
+		  });
+		  
+		});
+
+		$(".item").on("click", function () {
+		  $(this).find(".crawls").toggleClass("hidden");
+		  $("body").toggleClass("no-scroll");
+		});
+
+	  });
+	}
+   
+    </script>
+	</body>
+</html>
