@@ -1,6 +1,7 @@
 #main {
   background: #000 url(background.jpg);
   min-height: 100vh;
+  
   font-family: "ITC Serif Gothic", Lato;
   height: 100%;
   min-height: 100%;
@@ -65,7 +66,7 @@
 }
 
 .starwarsheader {
-  height: 0% !important;
+  height: 10em;
   position: relative !important;
   top: 0%;
   left: 5%;
