@@ -1,16 +1,12 @@
-
-body {
-  background: #000 url(background.jpg);
+#main {
+  background: #000 url(../img/background.jpg);
   min-height: 100vh;
-  text-align: center;
+  
   font-family: "ITC Serif Gothic", Lato;
   height: 100%;
   min-height: 100%;
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: center;
   justify-content: center;
 }
 
@@ -20,8 +16,8 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  
+.container {
+	display: none;
 }
 
 @import url('//fonts.googleapis.com/css?family=Lato:700');
@@ -39,6 +35,7 @@ main {
   align-items: center;
   text-transform: uppercase;
   text-align: center;
+  
 }
 .item:hover,
 .item:focus {
@@ -58,38 +55,7 @@ main {
   }
 }
 
-.crawls {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  min-height: 100vh;
-  background: #000 url(background.jpg);
-  z-index: 1000;
-  padding: 10px;
-  color: rgba(229,177,58,1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  font-size: 14px !important;
-}
 
-.crawls h2, 
-.crawls p {
-  max-width: 300px;
-  text-align: justify;
-}
-
-.crawls h2 {
-  font-family: swtitle, Arial !important;
-  text-align: left !important;
-}
-
-.crawls p {
-  font-family: swbody, Arial !important;
-}
 
 .hidden {
   display: none;
@@ -100,10 +66,10 @@ main {
 }
 
 .starwarsheader {
-  
-  position: relative;
-  left: 5%;
-  width: 34em;
   height: 10em;
-  
+  position: relative !important;
+  top: 0%;
+  left: 5%;
+  width: 34em;	
+  display: none;
 }
