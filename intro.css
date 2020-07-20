@@ -1,4 +1,4 @@
-
+/***efeito***/
 
 .star {
   animation: star 10s ease-out forwards;
@@ -100,13 +100,12 @@ body {
   display: inline-block;
 }
 
- .star, .wars {
+img {
   width: 100%;
 }
 
 .star, .wars, .byline {
   position: absolute;
-  
 }
 
 .star {
@@ -133,7 +132,7 @@ body {
 
 
 
-/*** Responsivo ***/
+/***responsivo***/
 
 @media only screen and (max-width: 600px) {
   .starwars {
@@ -146,3 +145,70 @@ body {
     font-size: 7px;
   }
 }
+
+
+#main {
+  background: #000 url(background.jpg);
+  min-height: 100vh;
+  font-family: "ITC Serif Gothic", Lato;
+  height: 100%;
+  min-height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+	display: none;
+}
+
+@import url('//fonts.googleapis.com/css?family=Lato:700');
+
+.item {
+  
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: rgba(229,177,58,1);
+  font-family: "ITC Serif Gothic", Lato;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  
+}
+.item:hover,
+.item:focus {
+ padding: 40px; 
+ box-shadow: 0 0 0px 2px rgba(229,177,58,1) inset;
+}
+
+@media (min-width: 576px) {
+  .item {
+    height: 15vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    height: 30vh;
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+

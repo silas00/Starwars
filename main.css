@@ -101,8 +101,8 @@ main {
 
 .starwarsheader {
   
-  position: relative;
-  left: 5%;
+  position: absolute;
+  left: 50%;
   width: 34em;
   height: 10em;
   
